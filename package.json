@@ -1,0 +1,21 @@
+{
+  "name": "jaconv",
+  "version": "0.0.0",
+  "description": "Japanese character conversion library",
+  "author": "Kazuhiko Arase",
+  "main": "lib/jaconv.js",
+  "types": "lib/jaconv.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-nodeunit": "^1.0.0",
+    "grunt-contrib-uglify": "^2.0.0",
+    "grunt-ts": "^6.0.0-beta.3",
+    "typescript": "^1.8.10",
+    "uglify": "^0.1.5"
+  }
+}

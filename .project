@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>jaconv</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.wst.jsdt.core.javascriptValidator</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+		<buildCommand>
+			<name>com.palantir.typescript.typeScriptBuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<nature>com.palantir.typescript.typeScriptNature</nature>
+	</natures>
+	<filteredResources>
+		<filter>
+			<id>1477079683447</id>
+			<name></name>
+			<type>26</type>
+			<matcher>
+				<id>org.eclipse.ui.ide.multiFilter</id>
+				<arguments>1.0-name-matches-true-false-node_modules</arguments>
+			</matcher>
+		</filter>
+	</filteredResources>
+</projectDescription>
