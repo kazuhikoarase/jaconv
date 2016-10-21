@@ -1,10 +1,25 @@
 {
   "name": "jaconv",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
   "main": "lib/jaconv.js",
   "types": "lib/jaconv.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kazuhikoarase/jaconv.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kazuhikoarase/jaconv/issues"
+  },
+  "keywords": [
+    "japanese",
+    "hankaku",
+    "zenkaku",
+    "hiragana",
+    "katakana",
+    "roman"
+  ],
   "license": "MIT",
   "devDependencies": {
     "grunt": "^1.0.0",
