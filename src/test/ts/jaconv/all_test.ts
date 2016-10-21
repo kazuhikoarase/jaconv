@@ -56,9 +56,12 @@ exports.toHiragana = function(test : any) {
 };
 
 exports.toHebon = function(test : any) {
+  test.equal(jaconv.toHebon("にほんご"), 'NIHONGO');
   test.equal(jaconv.toHebon("にほんばし"), 'NIHOMBASHI');
   test.equal(jaconv.toHebon("いいだばし"), 'IIDABASHI');
   test.equal(jaconv.toHebon("おおいた"), 'OITA');
   test.equal(jaconv.toHebon("とうきょう"), 'TOKYO');
+  test.equal(jaconv.toHebon("ぐんま"), 'GUMMA');
+  test.equal(jaconv.toHebon("はんぷく"), 'HAMPUKU');
   test.done();
 };
