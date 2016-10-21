@@ -63,5 +63,7 @@ exports.toHebon = function(test : any) {
   test.equal(jaconv.toHebon("とうきょう"), 'TOKYO');
   test.equal(jaconv.toHebon("ぐんま"), 'GUMMA');
   test.equal(jaconv.toHebon("はんぷく"), 'HAMPUKU');
+  test.equal(jaconv.toHebon("ろっぽんギ"), 'ROPPONGI');
+  test.equal(jaconv.toHebon("ピッチャー"), 'PITCHA');
   test.done();
 };
