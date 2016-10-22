@@ -28,11 +28,13 @@ exports.toZenAscii = function(test : any) {
 
 exports.toHanKana = function(test : any) {
   test.equal(jaconv.toHanKana('あアｱＡA１1'), 'あｱｱＡA１1');
+  test.equal(jaconv.toHanKana('ギャ'), 'ｷﾞｬ');
   test.done();
 };
 
 exports.toZenKana = function(test : any) {
   test.equal(jaconv.toZenKana('あアｱＡA１1'), 'あアアＡA１1');
+  test.equal(jaconv.toZenKana('ｷﾞｬ'), 'ギャ');
   test.done();
 };
 
