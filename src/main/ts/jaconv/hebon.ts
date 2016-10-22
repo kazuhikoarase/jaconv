@@ -65,7 +65,7 @@ namespace jaconv {
   /**
    * 全角ひらがな,カタカナ をヘボン式で半角英文字に変換します。
    */
-  export function toHebon(s : string) : string {
+  export function toHebon(s : string) {
 
     // あらかじめひらがなに変換する。
     s = toHiragana(toZenKana(s) );

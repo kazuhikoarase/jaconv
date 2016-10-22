@@ -12,11 +12,17 @@ namespace x_jaconv {
 
 exports.toHanAscii = function(test : any) {
   test.equal(jaconv.toHanAscii('あアｱＡA１1'), 'あアｱAA11');
+  test.equal(jaconv.toHanAscii('“”'), '""');
+  test.equal(jaconv.toHanAscii('’'), "'");
+  test.equal(jaconv.toHanAscii('‘'), '`');
   test.done();
 };
 
 exports.toZenAscii = function(test : any) {
   test.equal(jaconv.toZenAscii('あアｱＡA１1'), 'あアｱＡＡ１１');
+  test.equal(jaconv.toZenAscii('"'), '”');
+  test.equal(jaconv.toZenAscii("'"), "’");
+  test.equal(jaconv.toZenAscii('`'), "‘");
   test.done();
 };
 

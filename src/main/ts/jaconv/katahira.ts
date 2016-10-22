@@ -23,7 +23,7 @@ namespace jaconv {
   /**
    * 全角カタカナを全角ひらがなに変換します。
    */
-  export function toHiragana(s : string) : string {
+  export function toHiragana(s : string) {
     var res = '';
     for (var i = 0; i < s.length; i += 1) {
       var c = s.charAt(i);
