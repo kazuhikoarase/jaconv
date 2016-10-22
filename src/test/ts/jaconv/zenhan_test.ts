@@ -44,26 +44,3 @@ exports.normalize = function(test : any) {
   test.equal(jaconv.normalize('あアアＡA１1'), 'あアアAA11');
   test.done();
 };
-
-exports.toKatakana = function(test : any) {
-  test.equal(jaconv.toKatakana('あアｱＡA１1'), 'アアｱＡA１1');
-  test.done();
-};
-
-exports.toHiragana = function(test : any) {
-  test.equal(jaconv.toHiragana('あアｱＡA１1'), 'ああｱＡA１1');
-  test.done();
-};
-
-exports.toHebon = function(test : any) {
-  test.equal(jaconv.toHebon('にほんご'), 'NIHONGO');
-  test.equal(jaconv.toHebon('にほんばし'), 'NIHOMBASHI');
-  test.equal(jaconv.toHebon('いいだばし'), 'IIDABASHI');
-  test.equal(jaconv.toHebon('おおいた'), 'OITA');
-  test.equal(jaconv.toHebon('とうきょう'), 'TOKYO');
-  test.equal(jaconv.toHebon('ぐんま'), 'GUMMA');
-  test.equal(jaconv.toHebon('はんぷく'), 'HAMPUKU');
-  test.equal(jaconv.toHebon('ろっぽんギ'), 'ROPPONGI');
-  test.equal(jaconv.toHebon('ピッチャー'), 'PITCHA');
-  test.done();
-};
