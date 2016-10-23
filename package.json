@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
-  "main": "lib/jaconv.js",
+  "main": "lib/jaconv.min.js",
   "types": "lib/jaconv.d.ts",
   "repository": {
     "type": "git",
