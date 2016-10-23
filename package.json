@@ -1,6 +1,6 @@
 {
   "name": "jaconv",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
   "main": "lib/jaconv.min.js",
@@ -14,11 +14,16 @@
   },
   "keywords": [
     "japanese",
+    "conversion",
+    "hebon",
+    "hepburn",
+    "romaji",
+    "roman",
+    "romanization",
     "hankaku",
     "zenkaku",
     "hiragana",
-    "katakana",
-    "roman"
+    "katakana"
   ],
   "license": "MIT",
   "devDependencies": {
