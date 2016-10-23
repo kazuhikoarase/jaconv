@@ -25,10 +25,9 @@ namespace jaconv {
   export function toHiragana(s : string) {
     var res = '';
     for (var i = 0; i < s.length; i += 1) {
-      var c = s.charAt(i);
-      var cd = c.charCodeAt(0);
+      var cd = s.charCodeAt(i);
       res += (minKata <= cd && cd <= maxKata)?
-        String.fromCharCode(cd - minKata + minHira) : c;
+        String.fromCharCode(cd - minKata + minHira) : s.charAt(i);
     }
     return res;
   }
