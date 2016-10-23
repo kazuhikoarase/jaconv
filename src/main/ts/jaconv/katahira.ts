@@ -12,10 +12,9 @@ namespace jaconv {
   export function toKatakana(s : string) {
     var res = '';
     for (var i = 0; i < s.length; i += 1) {
-      var c = s.charAt(i);
-      var cd = c.charCodeAt(0);
+      var cd = s.charCodeAt(i);
       res += (minHira <= cd && cd <= maxHira)?
-        String.fromCharCode(cd - minHira + minKata) : c;
+        String.fromCharCode(cd - minHira + minKata) : s.charAt(i);
     }
     return res;
   }
