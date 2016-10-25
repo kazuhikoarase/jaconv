@@ -63,7 +63,7 @@ namespace jaconv {
   };
 
   /**
-   * 全角ひらがなをヘボン式で半角英文字に変換します。
+   * 全角ひらがなをヘボン式ローマ字で半角英文字に変換します。
    */
   export function toHebon(s : string) {
 

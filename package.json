@@ -1,6 +1,6 @@
 {
   "name": "jaconv",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
   "main": "lib/jaconv.min.js",
