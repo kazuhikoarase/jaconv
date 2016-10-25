@@ -7,18 +7,27 @@ module.exports = function(grunt) {
     dist: 'lib',
     ts: {
       main: {
-        options : { sourceMap: false, declaration: true,
-          rootDir: '<%= src %>/main/ts' },
+        options : { sourceMap: false, declaration: true },
         src: [ '<%= src %>/main/ts/**/*.ts' ],
-        out: '<%= dist %>/<%= pkg.name %>.js'
+        outDir: '<%= build %>/ts'
       },
       test: {
-        options : { sourceMap: false,
-          rootDir: '<%= src %>/test/ts', types: 3},
+        options : { sourceMap: false },
           src: [ '<%= src %>/test/ts/**/*.ts',
-                 '<%= dist %>/<%= pkg.name %>.d.ts' ],
-          out: '<%= dist %>/<%= pkg.name %>_test.js'
+                 '<%= build %>/**/*.d.ts' ],
+          outDir: '<%= build %>/ts'
         }
+    },
+    concat: {
+      main: {
+        src: ['<%= build %>/ts/**/*.js',
+             '!<%= build %>/ts/**/*_test.js'],
+        dest: '<%= dist %>/<%= pkg.name %>.js'
+      },
+      test: {
+        src: ['<%= build %>/ts/**/*_test.js'],
+        dest: '<%= dist %>/<%= pkg.name %>_test.js'
+      }
     },
     uglify: {
       options: { ASCIIOnly : true },
@@ -58,6 +67,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks("grunt-ts");
 
-  grunt.registerTask('default', ['ts', 'uglify']);
+  grunt.registerTask('default', ['ts', 'concat', 'uglify']);
 
 };
