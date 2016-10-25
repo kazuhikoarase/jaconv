@@ -5,7 +5,7 @@ namespace x_jaconv {
   declare var jaconv : any;
   !function () {
     if (typeof jaconv == 'undefined') {
-        jaconv = require('./jaconv');
+      jaconv = require('./jaconv');
     }
   }();
 }

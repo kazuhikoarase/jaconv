@@ -5,13 +5,13 @@ namespace x_jaconv {
   declare var jaconv : any;
   !function () {
     if (typeof jaconv == 'undefined') {
-        jaconv = require('./jaconv');
+      jaconv = require('./jaconv');
     }
   }();
 }
 
 exports.toHebon = function(test : any) {
-  test.equal(jaconv.toHebon('へぼんしきローマじ'), 'HEBONSHIKIROMAJI');
+  test.equal(jaconv.toHebon('へぼんしきろーまじ'), 'HEBONSHIKIROMAJI');
   test.equal(jaconv.toHebon('にほんご'), 'NIHONGO');
   test.equal(jaconv.toHebon('にほんばし'), 'NIHOMBASHI');
   test.equal(jaconv.toHebon('いいだばし'), 'IIDABASHI');
@@ -20,6 +20,6 @@ exports.toHebon = function(test : any) {
   test.equal(jaconv.toHebon('ろっぽんぎ'), 'ROPPONGI');
   test.equal(jaconv.toHebon('ぐんま'), 'GUMMA');
   test.equal(jaconv.toHebon('はんぷく'), 'HAMPUKU');
-  test.equal(jaconv.toHebon('ピッチャー'), 'PITCHA');
+  test.equal(jaconv.toHebon('カタカナ'), 'カタカナ');
   test.done();
 };

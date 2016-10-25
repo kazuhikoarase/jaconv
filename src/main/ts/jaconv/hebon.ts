@@ -63,12 +63,9 @@ namespace jaconv {
   };
 
   /**
-   * 全角ひらがな,カタカナ をヘボン式で半角英文字に変換します。
+   * 全角ひらがなをヘボン式で半角英文字に変換します。
    */
   export function toHebon(s : string) {
-
-    // あらかじめひらがなに変換する。
-    s = toHiragana(toZenKana(s) );
 
     var hebon = '';
     var lastHebon = '';
