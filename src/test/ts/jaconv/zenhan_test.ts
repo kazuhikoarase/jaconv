@@ -15,6 +15,7 @@ exports.toHanAscii = function(test : any) {
   test.equal(jaconv.toHanAscii('“”'), '""');
   test.equal(jaconv.toHanAscii('’'), "'");
   test.equal(jaconv.toHanAscii('‘'), '`');
+  test.equal(jaconv.toHanAscii('￥'), '\\');
   test.done();
 };
 
@@ -23,18 +24,22 @@ exports.toZenAscii = function(test : any) {
   test.equal(jaconv.toZenAscii('"'), '”');
   test.equal(jaconv.toZenAscii("'"), "’");
   test.equal(jaconv.toZenAscii('`'), "‘");
+  test.equal(jaconv.toZenAscii('\\'), "￥");
   test.done();
 };
 
 exports.toHanKana = function(test : any) {
   test.equal(jaconv.toHanKana('あアｱＡA１1'), 'あｱｱＡA１1');
   test.equal(jaconv.toHanKana('ギャ'), 'ｷﾞｬ');
+  test.equal(jaconv.toHanKana('キ゛ャ'), 'ｷﾞｬ');
+  test.equal(jaconv.toHanKana('ヒ゜ン'), 'ﾋﾟﾝ');
   test.done();
 };
 
 exports.toZenKana = function(test : any) {
   test.equal(jaconv.toZenKana('あアｱＡA１1'), 'あアアＡA１1');
   test.equal(jaconv.toZenKana('ｷﾞｬ'), 'ギャ');
+  test.equal(jaconv.toZenKana('ﾋﾟﾝ'), 'ピン');
   test.done();
 };
 
