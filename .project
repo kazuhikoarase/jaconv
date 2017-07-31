@@ -15,10 +15,16 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+        <buildCommand>
+            <name>org.eclipse.jdt.core.javabuilder</name>
+            <arguments>
+            </arguments>
+        </buildCommand>
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 		<nature>com.palantir.typescript.typeScriptNature</nature>
+        <nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 	<filteredResources>
 		<filter>
