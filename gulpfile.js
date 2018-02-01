@@ -10,18 +10,30 @@ const jasmine = require('gulp-jasmine');
 
 var targetName = 'jaconv';
 
+var tsSrc = [
+  'src/main/ts/**/*.ts',
+  'src/test/ts/**/*.ts'
+];
+var tsProject = ts.createProject({
+  noImplicitAny: true,
+  sourceMap: false,
+  declaration: true
+});
+
 gulp.task('clean', function() {
   return del([ 'build/ts', 'lib/*' ]);
 });
 
 gulp.task('build', function() {
-  return gulp.src(['src/main/ts/**/*.ts', 'src/test/ts/**/*.ts'])
-    .pipe(ts({
-      noImplicitAny: true,
-      sourceMap: false,
-      declaration: true
-    }) )
+  return gulp.src(tsSrc)
+    .pipe(tsProject() )
     .pipe(gulp.dest('build/ts/') );
+});
+
+gulp.task('watch', function(){
+  gulp.watch(tsSrc, ['concat-main']).on('change', function(event) {
+    console.log(event.path + ' [' + event.type + ']');
+  });
 });
 
 gulp.task('concat-main', ['build'], function() {
