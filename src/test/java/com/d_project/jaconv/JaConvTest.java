@@ -1,6 +1,4 @@
-package x_jaconv;
-
-import jaconv.JaConv;
+package com.d_project.jaconv;
 
 import org.junit.Assert;
 import org.junit.Test;

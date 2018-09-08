@@ -1,4 +1,4 @@
-package jaconv;
+package com.d_project.jaconv;
 
 import java.util.HashMap;
 import java.util.Map;
