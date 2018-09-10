@@ -1,4 +1,4 @@
 /.tscache
 /build
 /node_modules
-/target/
+/target
