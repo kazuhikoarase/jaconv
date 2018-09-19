@@ -27,15 +27,14 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.0.0",
     "del": "^3.0.0",
-    "run-sequence": "^2.0.0",
+    "gulp": "^4.0.0",
     "gulp-concat": "^2.0.0",
-    "gulp-rename": "^1.0.0",
-    "gulp-jasmine": "^2.0.0",
+    "gulp-jasmine": "^4.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-typescript": "^4.0.0",
     "gulp-uglify": "^3.0.0",
-    "gulp-typescript": "^3.0.0",
-    "typescript": "^2.0.0",
-    "uglify": "^0.1.5"
+    "run-sequence": "^2.0.0",
+    "typescript": "^2.9.0"
   }
 }
