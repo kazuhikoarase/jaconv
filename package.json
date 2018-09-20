@@ -34,7 +34,6 @@
     "gulp-rename": "^1.4.0",
     "gulp-typescript": "^4.0.0",
     "gulp-uglify": "^3.0.0",
-    "run-sequence": "^2.0.0",
     "typescript": "^2.9.0"
   }
 }
