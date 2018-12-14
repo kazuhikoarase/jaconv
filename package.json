@@ -1,6 +1,6 @@
 {
   "name": "jaconv",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
   "main": "lib/jaconv.min.js",
@@ -29,11 +29,16 @@
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^4.0.0",
-    "gulp-concat": "^2.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-jasmine": "^4.0.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-order": "^1.2.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
-    "gulp-typescript": "^4.0.0",
-    "gulp-uglify": "^3.0.0",
-    "typescript": "^2.9.0"
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-typescript": "^5.0.0",
+    "gulp-uglify": "^3.0.1",
+    "typescript": "^3.2.2"
   }
 }

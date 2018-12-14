@@ -355,13 +355,4 @@ namespace jaconv {
   export function normalize(s : string) {
     return toHanAscii(toZenKana(s) );
   }
-
-  // export
-  declare var exports : any;
-  declare var module : any;
-  !function(jaconv : any) {
-    if (typeof exports === 'object') {
-      module.exports = jaconv;
-    }
-  }(jaconv);
 }

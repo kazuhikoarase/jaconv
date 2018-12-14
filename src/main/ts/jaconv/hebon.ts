@@ -3,7 +3,7 @@
 //
 // Copyright (c) 2011 Kazuhiko Arase
 //
-// URL: http://www.d-project.com/
+// URL: https://github.com/kazuhikoarase/jaconv
 //
 // Licensed under the MIT license:
 //  http://www.opensource.org/licenses/mit-license.php

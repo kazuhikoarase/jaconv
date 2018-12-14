@@ -1,69 +1,86 @@
+//
+// myapp
+//
 
-const gulp = require('gulp');
 const del = require('del');
+const gulp = require('gulp');
 const ts = require('gulp-typescript');
-const rename = require('gulp-rename');
+const plumber = require('gulp-plumber');
+const notify = require('gulp-notify');
+const sourcemaps = require('gulp-sourcemaps');
+const order = require('gulp-order');
 const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
+const rename = require('gulp-rename');
 const jasmine = require('gulp-jasmine');
 
 var targetName = 'jaconv';
 
-var tsSrc = [
-  'src/main/ts/**/*.ts',
-  'src/test/ts/**/*.ts'
-];
+var mainTsSrc = [ 'src/main/ts/**/*.ts' ];
+var testTsSrc = [ 'src/test/ts/**/*.ts' ];
 
-var tsProject = ts.createProject({
-  noImplicitAny: true,
-  sourceMap: false,
-  declaration: true
-});
+var src = 'src';
+var lib = `lib`;
 
 gulp.task('clean', function() {
-  return del([ 'build/ts', 'lib/*' ]);
+  return del([ lib ]);
 });
 
-gulp.task('build', function() {
-  return gulp.src(tsSrc)
-    .pipe(tsProject() )
-    .pipe(gulp.dest('build/ts/') );
+gulp.task('build-main', function() {
+  return gulp.src(mainTsSrc)
+    .pipe(plumber({
+      errorHandler : notify.onError({
+        title : 'error in <%= error.plugin %>',
+        message : '<%= error.message %>'
+      })
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(ts({
+      noImplicitAny : true,
+      declaration : true,
+      outFile : `${targetName}.js`
+    }) )
+    .pipe(sourcemaps.write('.') )
+    .pipe(gulp.dest(lib) );
 });
 
-gulp.task('watch', function(){
-  gulp.watch(tsSrc, gulp.series('concat-main') ).on('change', function(path) {
-    console.log(path);
-  });
+gulp.task('build-test', function() {
+  return gulp.src(testTsSrc)
+    .pipe(plumber({
+      errorHandler : notify.onError({
+        title : 'error in <%= error.plugin %>',
+        message : '<%= error.message %>'
+      })
+    }))
+    .pipe(sourcemaps.init())
+    .pipe(ts({
+      noImplicitAny : true,
+      declaration : false,
+      outFile : `${targetName}.spec.js`
+    }) )
+    .pipe(sourcemaps.write('.') )
+    .pipe(gulp.dest(lib) );
 });
 
-gulp.task('concat-main', gulp.series('build', function() {
-  return gulp.src([ 'build/ts/**/*.js', '!build/ts/**/*.spec.js' ])
-    .pipe(concat(targetName + '.js') )
-    .pipe(gulp.dest('lib/') );
+gulp.task('build', gulp.series('build-main', 'build-test') );
+
+gulp.task('jasmine', gulp.series('build', function() {
+  return gulp.src(`${lib}/${targetName}.spec.js`)
+    .pipe(jasmine() );
 }) );
 
-gulp.task('concat-main.d', gulp.series('build', function() {
-  return gulp.src([ 'build/ts/**/*.d.ts', '!build/ts/**/*.spec.d.ts' ])
-    .pipe(concat(targetName + '.d.ts') )
-    .pipe(gulp.dest('lib/') );
-}) );
-
-gulp.task('concat-test', gulp.series('build', function() {
-  return gulp.src([ 'build/ts/**/*.spec.js' ])
-    .pipe(concat(targetName + '.spec.js') )
-    .pipe(gulp.dest('lib/') );
-}) );
-
-gulp.task('compress', gulp.series('concat-main', function () {
-  return gulp.src('lib/' + targetName + '.js')
+gulp.task('compress', gulp.series('jasmine', function () {
+  return gulp.src(`${lib}/${targetName}.js`)
     .pipe(uglify({ output : { ascii_only : true } }) )
     .pipe(rename({ suffix: '.min' }) )
-    .pipe(gulp.dest('lib/') );
+    .pipe(gulp.dest(lib) );
 }) );
 
-gulp.task('jasmine', gulp.series('concat-main','concat-test', function() {
-  return gulp.src('lib/' + targetName + '.spec.js')
-  .pipe(jasmine() );
+gulp.task('watch', gulp.series('jasmine', function() {
+  gulp.watch(mainTsSrc.concat(testTsSrc),
+      gulp.series('jasmine') ).on('change', function(path) {
+    console.log(path);
+  });
 }) );
 
-gulp.task('default', gulp.series('compress', 'concat-main.d', 'jasmine') );
+gulp.task('default', gulp.series('compress') );

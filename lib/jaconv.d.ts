@@ -4,7 +4,6 @@ declare namespace jaconv {
      */
     function toHebon(s: string): string;
 }
-
 declare namespace jaconv {
     /**
      * 全角ひらがなを全角カタカナに変換します。
@@ -15,7 +14,8 @@ declare namespace jaconv {
      */
     function toHiragana(s: string): string;
 }
-
+declare namespace jaconv {
+}
 declare namespace jaconv {
     /**
      * 全角英数記号を半角に変換します。
