@@ -3,15 +3,15 @@ declare var require: any, describe : any, it : any, expect : any;
 describe('hebon', function() {
   var jaconv = require('./jaconv');
   it('toHebon', function() {
-    expect('HEBONSHIKIROMAJI').toEqual(jaconv.toHebon('へぼんしきろーまじ') );
-    expect('NIHONGO').toEqual(jaconv.toHebon('にほんご') );
-    expect('NIHOMBASHI').toEqual(jaconv.toHebon('にほんばし') );
-    expect('IIDABASHI').toEqual(jaconv.toHebon('いいだばし') );
-    expect('OITA').toEqual(jaconv.toHebon('おおいた') );
-    expect('TOKYO').toEqual(jaconv.toHebon('とうきょう') );
-    expect('ROPPONGI').toEqual(jaconv.toHebon('ろっぽんぎ') );
-    expect('GUMMA').toEqual(jaconv.toHebon('ぐんま') );
-    expect('HAMPUKU').toEqual(jaconv.toHebon('はんぷく') );
-    expect('カタカナ').toEqual(jaconv.toHebon('カタカナ') );
+    expect(jaconv.toHebon('へぼんしきろーまじ') ).toEqual('HEBONSHIKIROMAJI');
+    expect(jaconv.toHebon('にほんご') ).toEqual('NIHONGO');
+    expect(jaconv.toHebon('にほんばし') ).toEqual('NIHOMBASHI');
+    expect(jaconv.toHebon('いいだばし') ).toEqual('IIDABASHI');
+    expect(jaconv.toHebon('おおいた') ).toEqual('OITA');
+    expect(jaconv.toHebon('とうきょう') ).toEqual('TOKYO');
+    expect(jaconv.toHebon('ろっぽんぎ') ).toEqual('ROPPONGI');
+    expect(jaconv.toHebon('ぐんま') ).toEqual('GUMMA');
+    expect(jaconv.toHebon('はんぷく') ).toEqual('HAMPUKU');
+    expect(jaconv.toHebon('カタカナ') ).toEqual('カタカナ');
   });
 });
