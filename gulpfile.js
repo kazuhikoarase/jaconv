@@ -16,11 +16,23 @@ const jasmine = require('gulp-jasmine');
 
 var targetName = 'jaconv';
 
-var mainTsSrc = [ 'src/main/ts/**/*.ts' ];
-var testTsSrc = [ 'src/test/ts/**/*.ts' ];
-
-var src = 'src';
+var src = `src`;
 var lib = `lib`;
+
+var mainTsSrc = [ `${src}/main/ts/**/*.ts` ];
+var testTsSrc = [ `${src}/test/ts/**/*.ts` ];
+
+var mainTsProject = ts.createProject({
+  noImplicitAny : true,
+  declaration : true,
+  outFile : `${targetName}.js`
+});
+
+var testTsProject = ts.createProject({
+  noImplicitAny : true,
+  declaration : false,
+  outFile : `${targetName}.spec.js`
+});
 
 gulp.task('clean', function() {
   return del([ lib ]);
@@ -35,11 +47,7 @@ gulp.task('build-main', function() {
       })
     }))
     .pipe(sourcemaps.init())
-    .pipe(ts({
-      noImplicitAny : true,
-      declaration : true,
-      outFile : `${targetName}.js`
-    }) )
+    .pipe(mainTsProject() )
     .pipe(sourcemaps.write('.') )
     .pipe(gulp.dest(lib) );
 });
@@ -53,11 +61,7 @@ gulp.task('build-test', function() {
       })
     }))
     .pipe(sourcemaps.init())
-    .pipe(ts({
-      noImplicitAny : true,
-      declaration : false,
-      outFile : `${targetName}.spec.js`
-    }) )
+    .pipe(testTsProject() )
     .pipe(sourcemaps.write('.') )
     .pipe(gulp.dest(lib) );
 });
