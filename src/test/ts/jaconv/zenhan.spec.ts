@@ -3,37 +3,37 @@ declare var require: any, describe : any, it : any, expect : any;
 describe('zenhan', function() {
   var jaconv = require('./jaconv');
   it('toHanAscii', function() {
-    expect('あアｱAA11').toEqual(jaconv.toHanAscii('あアｱＡA１1') );
-    expect('""').toEqual(jaconv.toHanAscii('“”') );
-    expect( "'").toEqual(jaconv.toHanAscii('’') );
-    expect('`').toEqual(jaconv.toHanAscii('‘') );
-    expect('\\').toEqual(jaconv.toHanAscii('￥') );
+    expect(jaconv.toHanAscii('あアｱＡA１1') ).toEqual('あアｱAA11');
+    expect(jaconv.toHanAscii('“”') ).toEqual('""');
+    expect(jaconv.toHanAscii('’') ).toEqual("'");
+    expect(jaconv.toHanAscii('‘') ).toEqual('`');
+    expect(jaconv.toHanAscii('￥') ).toEqual('\\');
   });
   it('toZenAscii', function() {
-    expect('あアｱＡＡ１１').toEqual(jaconv.toZenAscii('あアｱＡA１1') );
-    expect('”').toEqual(jaconv.toZenAscii('"') );
-    expect( "’").toEqual(jaconv.toZenAscii("'") );
-    expect( "‘").toEqual(jaconv.toZenAscii('`') );
-    expect( "￥").toEqual(jaconv.toZenAscii('\\') );
+    expect(jaconv.toZenAscii('あアｱＡA１1') ).toEqual('あアｱＡＡ１１');
+    expect(jaconv.toZenAscii('"') ).toEqual('”');
+    expect(jaconv.toZenAscii("'") ).toEqual("’");
+    expect(jaconv.toZenAscii('`') ).toEqual("‘");
+    expect(jaconv.toZenAscii('\\') ).toEqual("￥");
   });
   it('toHanKana', function() {
-    expect('あｱｱＡA１1').toEqual(jaconv.toHanKana('あアｱＡA１1') );
-    expect('ｷﾞｬ').toEqual(jaconv.toHanKana('ギャ') );
-    expect('ｷﾞｬ').toEqual(jaconv.toHanKana('キ゛ャ') );
-    expect('ﾋﾟﾝ').toEqual(jaconv.toHanKana('ヒ゜ン') );
+    expect(jaconv.toHanKana('あアｱＡA１1') ).toEqual('あｱｱＡA１1');
+    expect(jaconv.toHanKana('ギャ') ).toEqual('ｷﾞｬ');
+    expect(jaconv.toHanKana('キ゛ャ') ).toEqual('ｷﾞｬ');
+    expect(jaconv.toHanKana('ヒ゜ン') ).toEqual('ﾋﾟﾝ');
   });
   it('toZenKana', function() {
-    expect('あアアＡA１1').toEqual(jaconv.toZenKana('あアｱＡA１1') );
-    expect('ギャ').toEqual(jaconv.toZenKana('ｷﾞｬ') );
-    expect('ピン').toEqual(jaconv.toZenKana('ﾋﾟﾝ') );
+    expect(jaconv.toZenKana('あアｱＡA１1') ).toEqual('あアアＡA１1');
+    expect(jaconv.toZenKana('ｷﾞｬ') ).toEqual('ギャ');
+    expect(jaconv.toZenKana('ﾋﾟﾝ') ).toEqual('ピン');
   });
   it('toHan', function() {
-    expect('あｱｱAA11').toEqual(jaconv.toHan('あアｱＡA１1') );
+    expect(jaconv.toHan('あアｱＡA１1') ).toEqual('あｱｱAA11');
   });
   it('toZen', function() {
-    expect('あアアＡＡ１１').toEqual(jaconv.toZen('あアｱＡA１1') );
+    expect(jaconv.toZen('あアｱＡA１1') ).toEqual('あアアＡＡ１１');
   });
   it('normalize', function() {
-    expect('あアアAA11').toEqual(jaconv.normalize('あアアＡA１1') );
+    expect(jaconv.normalize('あアアＡA１1') ).toEqual('あアアAA11');
   });
 });
