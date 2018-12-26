@@ -1,4 +1,5 @@
 /.tscache
+/*.tgz
 /build
-/node_modules
 /target
+/node_modules

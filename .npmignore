@@ -1,0 +1,9 @@
+*.tgz
+.project
+.settings
+.classpath
+pom.xml
+target
+src/main/java
+src/test/java
+demo
