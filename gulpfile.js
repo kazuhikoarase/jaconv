@@ -47,6 +47,7 @@ gulp.task('build-main', function() {
       })
     }))
     .pipe(sourcemaps.init())
+    .pipe(order([ '**/*.ts' ]) )
     .pipe(mainTsProject() )
     .pipe(sourcemaps.write('.') )
     .pipe(gulp.dest(lib) );
@@ -61,6 +62,7 @@ gulp.task('build-test', function() {
       })
     }))
     .pipe(sourcemaps.init())
+    .pipe(order([ '**/*.ts' ]) )
     .pipe(testTsProject() )
     .pipe(sourcemaps.write('.') )
     .pipe(gulp.dest(lib) );
