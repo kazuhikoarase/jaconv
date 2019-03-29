@@ -34,7 +34,7 @@ $(function() {
   };
   addRow($('<span></span>').text(''), $inTxt);
   $.each(funcs, function(i, func) {
-    addRow($('<span></span>').text('jconv.' + func.name).
+    addRow($('<span></span>').text('jaconv.' + func.name).
           attr('title', func.desc),
         $('<input type="text" />').
         addClass('txt').addClass('result').
