@@ -49,3 +49,5 @@ declare namespace jaconv {
      */
     function normalize(s: string): string;
 }
+
+export = jaconv
