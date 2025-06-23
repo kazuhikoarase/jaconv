@@ -1,10 +1,10 @@
 {
   "name": "jaconv",
-  "version": "1.0.4",
+  "version": "1.1.0",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
-  "main": "lib/jaconv.min.js",
-  "types": "lib/jaconv.d.ts",
+  "main": "dist/jaconv.umd.js",
+  "types": "dist/jaconv.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/kazuhikoarase/jaconv.git"
@@ -25,20 +25,19 @@
     "hiragana",
     "katakana"
   ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "test": "wtr"
+  },
   "license": "MIT",
   "devDependencies": {
-    "del": "^3.0.0",
-    "gulp": "^4.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-jasmine": "^4.0.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-order": "^1.2.0",
-    "gulp-plumber": "^1.2.1",
-    "gulp-rename": "^1.4.0",
-    "gulp-sourcemaps": "^2.6.4",
-    "gulp-typescript": "^5.0.0",
-    "gulp-uglify": "^3.0.1",
-    "typescript": "^3.2.2",
-    "lodash.template": "^4.5.0"
+    "@open-wc/testing": "^4.0.0",
+    "@types/node": "^24.0.3",
+    "@web/dev-server-esbuild": "^1.0.4",
+    "@web/test-runner": "^0.20.2",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.4"
   }
 }

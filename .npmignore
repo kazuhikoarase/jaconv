@@ -6,4 +6,5 @@ pom.xml
 target
 src/main/java
 src/test/java
+coverage
 demo

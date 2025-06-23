@@ -1,11 +1,11 @@
-declare var require: any, describe : any, it : any, expect : any;
+import { expect } from "@open-wc/testing";
+import jaconv from '../../../main/ts/jaconv.ts';
 
 describe('katahira', function() {
-  var jaconv = require('./jaconv');
   it('toKatakana', function() {
-    expect(jaconv.toKatakana('あアｱＡA１1') ).toEqual('アアｱＡA１1');
+    expect(jaconv.toKatakana('あアｱＡA１1') ).to.equal('アアｱＡA１1');
   });
   it('toHiragana', function() {
-    expect(jaconv.toHiragana('あアｱＡA１1') ).toEqual('ああｱＡA１1');
+    expect(jaconv.toHiragana('あアｱＡA１1') ).to.equal('ああｱＡA１1');
   });
 });
