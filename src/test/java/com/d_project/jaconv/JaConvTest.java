@@ -17,6 +17,7 @@ public class JaConvTest {
     Assert.assertEquals("GUMMA", JaConv.toHebon("ぐんま") );
     Assert.assertEquals("HAMPUKU", JaConv.toHebon("はんぷく") );
     Assert.assertEquals("カタカナ", JaConv.toHebon("カタカナ") );
+    Assert.assertEquals("KITCHIN", JaConv.toHebon("きっちん") );
   }
 
   @Test

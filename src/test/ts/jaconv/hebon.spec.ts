@@ -13,5 +13,6 @@ describe('hebon', function() {
     expect(jaconv.toHebon('ぐんま') ).to.equal('GUMMA');
     expect(jaconv.toHebon('はんぷく') ).to.equal('HAMPUKU');
     expect(jaconv.toHebon('カタカナ') ).to.equal('カタカナ');
+    expect(jaconv.toHebon('きっちん') ).to.equal('KITCHIN');
   });
 });
