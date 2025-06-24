@@ -11,9 +11,9 @@
 //---------------------------------------------------------------------
 
 
-import * as hebon from './jaconv/hebon.ts';
-import * as katahira from './jaconv/katahira.ts';
-import * as zenhan from './jaconv/zenhan.ts';
+import * as hebon from './jaconv/hebon';
+import * as katahira from './jaconv/katahira';
+import * as zenhan from './jaconv/zenhan';
 
 export default {
 

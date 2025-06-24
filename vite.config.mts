@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   build: {
-    copyPublicDir:false,
+    outDir: 'dist',
     sourcemap: true,
     lib: {
       entry: resolve(__dirname, 'src/main/ts/jaconv.ts'),
@@ -17,7 +17,7 @@ export default defineConfig({
   },
   plugins: [
     dts({
-      include: [ 'src/main/ts/jaconv.ts' ],
+      rollupTypes : true,
     })
   ]
 });
