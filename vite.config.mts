@@ -9,10 +9,12 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: true,
+   
     lib: {
       entry: resolve(__dirname, 'src/main/ts/jaconv.ts'),
       name: 'jaconv',
       fileName: 'jaconv',
+      formats: ['cjs', 'es'],
     },
   },
   plugins: [

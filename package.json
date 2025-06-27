@@ -1,11 +1,16 @@
 {
   "name": "jaconv",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Japanese character conversion library",
   "author": "Kazuhiko Arase",
-  "main": "dist/jaconv.umd.js",
+  "main": "dist/jaconv.js",
   "module": "dist/jaconv.mjs",
   "types": "dist/jaconv.d.ts",
+  "exports": {
+    "types": "./dist/jaconv.d.ts",
+    "require": "./dist/jaconv.js",
+    "import": "./dist/jaconv.mjs"
+  },
   "directories": {
     "dist": "dist"
   },
