@@ -1,3 +1,6 @@
+
+import jaconv from '../dist/jaconv.mjs';
+
 $(function() {
   
   var funcs = [
